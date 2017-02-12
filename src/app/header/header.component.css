@@ -1,0 +1,45 @@
+
+#barraMenu{
+    color: red;
+    background-color: black;
+    
+}
+.navbar{
+    background-color: black;
+    border-radius:0;
+    
+}
+.navbar a:hover{
+    background-color:red;
+}
+.active a{
+    background-color: red;
+    color: white;
+    
+}
+
+.barraDeBusqueda{
+    margin-top: 0.4%;
+    width: 25%;
+    float:right;
+}
+.dropdown{
+    margin:8%;
+}
+.dropdown-toggle{
+    background-color:red;
+}
+
+#bajoBusqueda{
+    list-style: none;
+    width: 24%;
+    background-color: aliceblue;
+    position:absolute;
+}
+#bajoBusqueda img{
+    margin:3%;
+    
+}
+.listaBusqueda{
+    list-style: none;
+}

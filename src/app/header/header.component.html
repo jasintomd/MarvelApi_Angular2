@@ -1,0 +1,52 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"  routerLink="/">MarvelDB</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active"><a routerLink="/">Home</a></li>
+      <li routerLinkActive="active"><a routerLink="/Comics">Comics</a></li>
+      <li routerLinkActive="active"><a routerLink="/Personajes">Personajes</a></li>
+      <li routerLinkActive="active"><a routerLink="/Series">Series</a></li>
+    </ul>
+      <div>
+          {{rutaActual}}
+      </div>
+    
+    <ul class="nav navbar-nav navbar-right">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tema
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a (click)="temaOscuro($event)" >Tema oscuro</a></li>
+              <li><a (click)="temaClaro($event)">Tema claro</a></li>
+        </ul>
+      </div>        
+    </ul>          
+       
+      
+    <div class="barraDeBusqueda">
+      <div class="input-group">
+        <input [(ngModel)]="servicioTema.filtro" (keyup)="buscaApi($event)" type="text" class="form-control" placeholder="Filtrar o buscar comics (Lupa para busqueda completa)">
+        <div class="input-group-btn">
+          <button class="btn btn-default" routerLink="/Busqueda">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+        <div id="bajoBusqueda" *ngIf="respuesta && servicioTema.filtro != ''">
+            <ul *ngIf="respuesta.length !=0">
+            <li class="listaBusqueda" (click)="vacia($event)" *ngFor="let i of cuatroVeces">
+                <div *ngIf="respuesta[i]">
+                <hr class="separador">
+                <a routerLink="../Comics/{{respuesta[i].id}}">
+                    <img *ngIf="respuesta[i].images[0]" src={{respuesta[i].images[0].path}}.{{respuesta[i].images[0].extension}} width="10%">
+                    <img *ngIf="!respuesta[i].images[0]" src="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg" width="10%">{{respuesta[i].title}}</a>
+                </div>
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,78 @@
+#bienvenido{
+    padding-top:3%;
+    margin-left: 8%;
+    color:red;
+}
+#menu{
+    border-radius: 1%;
+    height: auto;
+    width: auto;
+    margin: 10%;
+    margin-top: 7%;
+}
+.temaOscuro{
+    border: solid 0.5em rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.5);
+}
+.temaClaro{
+    border: solid 0.5em rgba(0,0,255,0.5);
+    background-color: rgba(0,0,255,0.5)
+}
+#menu > li{
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    margin-top: 4%;
+    margin-left: 7%;
+    
+        
+}
+
+
+#menu > li > a:hover{
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    color:red;
+}
+
+#menu > li > a{
+    text-decoration: none;
+    color: black;
+}
+
+.icono{
+    height: 15em;
+    background-size: cover;
+
+}
+.temaOscuro #icono1{
+    background-image: url(/environments/images/comic1.jpg);
+}
+.temaOscuro #icono2{
+    background-image: url(/environments/images/personajes1.png);
+}
+.temaOscuro #icono3{
+    background-image: url(/environments/images/serie1.png);
+    width:25em
+}
+.temaClaro #icono1{
+    background-image: url(/environments/images/comic2.jpg);
+}
+.temaClaro #icono2{
+    background-image: url(/environments/images/personajes2.png);
+}
+.temaClaro #icono3{
+    background-image: url(/environments/images/serie2.png);
+    width:25em
+}
+
+@media all and (min-width: 1350px) {
+	#menu > li{
+        margin-left:12%;
+    }
+}
+@media all and (min-width: 1800px) {
+	#menu > li{
+        margin-left:17%;
+    }
+}

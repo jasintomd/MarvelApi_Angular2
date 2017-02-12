@@ -1,0 +1,26 @@
+<div id="contenedor">
+    <h1 id="bienvenido">BIENVENIDO MARVELDB! DESCUBRE NUESTRO UNIVERSO</h1>
+    <div [ngClass]="{'temaOscuro': servicioTema.tema[0], 'temaClaro': servicioTema.tema[1]}" id="menu">
+        <li>
+            <a routerLink="/Comics">
+                <div  class="icono" id="icono1" ></div>
+                
+                <h1>Comics!</h1>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/Personajes">
+                <div  class="icono" id="icono2" ></div>
+                <h1>Personajes</h1>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/Series">
+                <div  class="icono" id="icono3" ></div>
+              
+                <h1>Series</h1>
+            </a>
+        </li>
+    
+    </div>
+</div>

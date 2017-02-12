@@ -1,0 +1,24 @@
+
+<div id="contenido" *ngIf="!resultados">
+    <app-loading></app-loading>
+    
+</div>
+
+    
+<div id="contenido" *ngIf="resultados">
+<li *ngFor="let resultado of resultados | filtroNombre: servicioTema.filtro ">
+    <div [ngClass]="{'temaOscuro': servicioTema.tema[0], 'temaClaro': servicioTema.tema[1]}"><a routerLink={{resultado.id}}>
+        <div *ngIf="resultado.images[0]">
+            
+            <img src={{resultado.images[0].path}}.{{resultado.images[0].extension}} width="220px" height="350px" />
+        </div>
+        <div *ngIf="!resultado.images[0]">
+            
+            <img class="noEncontrada" src="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg" width="220px" height="350px"/>
+        </div>
+        <p>{{resultado.title}}</p>
+    
+        </a>
+    </div>
+    </li>
+</div>

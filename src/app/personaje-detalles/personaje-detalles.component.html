@@ -1,0 +1,40 @@
+<div id="contenido" *ngIf="!personaje">
+    
+    <app-loading></app-loading>
+</div>
+
+    
+<div id="contenido" *ngIf="personaje">
+<div [ngClass]="{'temaOscuro': servicioTema.tema[0], 'temaClaro': servicioTema.tema[1]}" id="resumenPersonaje">
+    <h1>{{personaje.name}}</h1>
+<hr class="separador"/>
+    <img *ngIf="personaje.thumbnail.path" src={{personaje.thumbnail.path}}.{{personaje.thumbnail.extension}}>
+    <div *ngIf="!personaje.thumbnail.path">
+            
+            <img class="noEncontrada" src="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg" width="200"/>
+        </div>
+    <hr class="separador"/>
+    <div id="bloqueComics">
+    <h2>Comics en los que aparece</h2>
+    <li class="personajes" *ngFor="let comic of personaje.comics.items; let i = index"> 
+        <a routerLink="../../Comics/{{personaje.comics.items[i].resourceURI.split('/')[6]}}">
+            <p>{{comic.name}}</p>
+        </a> 
+    </li>
+    </div>
+    
+    <hr class="separador"/>
+    <div id="bloqueSeries">
+    <h2>Series en las que aperece</h2>
+    <li class="personajes" *ngFor="let serie of personaje.series.items; let i = index">
+        <a routerLink="../../Series/{{personaje.series.items[i].resourceURI.split('/')[6]}}">
+            {{serie.name}}
+        </a> 
+    </li>
+    </div>
+    
+
+    <hr class="separador">
+    
+    </div>
+</div>

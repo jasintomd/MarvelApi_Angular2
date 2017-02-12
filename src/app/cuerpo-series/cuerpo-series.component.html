@@ -1,0 +1,14 @@
+<div id="contenidoSeries" *ngIf="listaSeries.length == 0">
+    <app-loading></app-loading>   
+</div>
+<div id="contenidoSeries" *ngIf="listaSeries.length != 0">
+    <li *ngFor="let serie of listaSeries.data.results | filtroNombre: servicioTema.filtro ">
+        <nav [ngClass]="{'temaOscuro': servicioTema.tema[0], 'temaClaro': servicioTema.tema[1]}">
+            <a routerLink={{serie.id}}><img src={{serie.thumbnail.path}}.{{serie.thumbnail.extension}} width="220px" height="350px">
+            <p>{{serie.title}}</p>
+            </a>
+        </nav>
+        
+    </li>
+
+</div>

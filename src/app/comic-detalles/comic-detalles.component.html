@@ -1,0 +1,48 @@
+<div id="contenido" *ngIf="!Comic">
+<app-loading></app-loading>
+</div>
+
+    
+<div id="contenido" *ngIf="Comic">
+<div [ngClass]="{'temaOscuro': servicioTema.tema[0], 'temaClaro': servicioTema.tema[1]}" id="resumenSerie">
+    <h1>{{Comic.title}}</h1>
+    <hr class="separador"/>
+        <img class="imgComic" *ngIf="Comic.images[0]" src={{Comic.images[0].path}}.{{Comic.images[0].extension}}>
+    
+        <img class="imgComic" *ngIf="!Comic.images[0]" src="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg" width="200"/>
+        <span>
+        <hr class="separador"/>   
+        
+        <h2>Descripción:</h2>
+            <h3 *ngIf="!Comic.description">No se ha encontrado descripción de este comic.</h3>
+            <h3><p  id="desc">{{Comic.description}}</p></h3>
+
+    
+        <h2>Pertenece a la serie: </h2><h3><a routerLink="../../Series/{{idSerie}}">{{Comic.series.name}}</a></h3>
+        <h3 *ngIf="Comic.series == 0">Serie no disponible.</h3>
+
+        <h2>Número de entrega:</h2>
+        <h3>{{Comic.issueNumber}}</h3>
+        <h3 *ngIf="!Comic.issueNumber">Desconocido.</h3>
+
+        
+        <h2>Creadores:</h2>
+    
+        <h3 *ngIf="Comic.creators.items.length == 0">No se han encontrado a los autores.</h3>
+        <li class="personajes" *ngFor="let autor of Comic.creators.items">{{autor.name}}, ({{autor.role}}) </li>
+    
+    
+    <hr class="separador"/> 
+    <h2>Personajes que aparecen en el comic:</h2>
+    <li class="personajes" *ngFor="let personaje of Comic.characters.items"><a routerLink="../../Personajes/{{personaje.resourceURI.split('/')[6]}}">{{personaje.name}} </a></li>
+            <h3 *ngIf="Comic.characters.items == 0">No se han encontrado a los personajes.</h3>
+        </span>
+    </div>
+
+    
+    
+    
+
+    <hr class="separador"/>
+    
+    </div>

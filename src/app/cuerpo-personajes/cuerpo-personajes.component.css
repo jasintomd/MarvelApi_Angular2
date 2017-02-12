@@ -1,0 +1,59 @@
+#contenido {
+    margin-left:3%;
+}
+h1{
+    color:white;
+    font-size: 5em;
+    margin-left: 20%;
+    
+}
+#resumenSerie{
+    
+    display: inline-block
+}
+
+.imgSerie{
+    height: 50em;
+    border: solid 1px white;
+    float:left;
+    margin-right: 3%;
+    
+}
+h2, .descr{
+
+    color:white;
+    margin-bottom: 3%;
+    
+}
+
+li{
+    margin-top: 3%;
+
+
+    width: 20%;
+
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    font-size:2em;
+}
+li a{
+    color:bisque;
+    text-decoration: none;
+}
+li:hover{
+    padding: 0px 0px 20px 0px;  
+}
+li:hover img{
+    height: 370px;
+    width: 260px;
+    box-shadow: 0px 2px 56px 0px rgba(0,0,0,0.75);
+}
+.temaClaro a, .temaClaro p, .temaClaro h1, .temaClaro h2, .temaClaro h3{
+    color: black;
+}
+.temaClaro img{
+    border: solid 1px black;
+    
+}

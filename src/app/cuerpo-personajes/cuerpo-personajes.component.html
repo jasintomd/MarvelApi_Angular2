@@ -1,0 +1,14 @@
+<div id="contenidoPersonajes" *ngIf="!listaPersonajes">
+ <app-loading></app-loading>
+</div>
+<div id="contenidoPersonajes" *ngIf="listaPersonajes">
+    <li *ngFor="let personaje of listaPersonajes.data.results | filtroPersonajes: servicioTema.filtro">
+        <nav [ngClass]="{'temaOscuro': servicioTema.tema[0], 'temaClaro': servicioTema.tema[1]}">
+            <a routerLink={{personaje.id}}><img src={{personaje.thumbnail.path}}.{{personaje.thumbnail.extension}} width="220px" height="350px">
+            <p>{{personaje.name}}</p>
+            </a>
+        </nav>
+        
+    </li>
+
+</div>

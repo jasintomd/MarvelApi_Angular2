@@ -1,0 +1,47 @@
+<div id="contenido" *ngIf="!listaSerieCompleta">
+<app-loading></app-loading>
+</div>
+
+    
+<div id="contenido" *ngIf="listaSerieCompleta && serie">
+<div [ngClass]="{'temaOscuro': servicioTema.tema[0], 'temaClaro': servicioTema.tema[1]}" id="resumenSerie">
+    <h1>{{serie.title}}</h1>
+    <hr class="separador">
+    <img class="imgSerie" src={{serie.thumbnail.path}}.{{serie.thumbnail.extension}}>
+    <span >
+    <h2>Descripción:</h2>
+    
+    <h3  class="descr" >{{serie.description}}</h3>
+    
+    <h3  *ngIf="!serie.description" class="descr" >La descripción no está disponible.</h3>
+    
+    
+    <h2>Personajes:</h2>
+    <p  *ngIf="serie.characters.items.length == 0" class="descr" >Los personajes no están disponibles.</p>
+    <li class="personajes" *ngFor="let personaje of serie.characters.items">
+        <h3><a routerLink="../../Personajes/{{personaje.resourceURI.split('/')[6]}}">{{personaje.name}}</a></h3>
+    </li>
+    </span>
+</div>
+    <hr class="separador">
+<div [ngClass]="{'temaOscuro': servicioTema.tema[0], 'temaClaro': servicioTema.tema[1]}" id="capitulos">
+    <h2 class="centrado">Comics de la serie</h2>
+
+    <h3 *ngIf="listaSerieCompleta.data.results == 0">No se han encontrado comics asociados a esta serie.</h3>
+<li class="todosComics"*ngFor="let comic of listaSerieCompleta.data.results">
+    <div><a routerLink="../../Comics/{{comic.id}}">
+        <div *ngIf="comic.images[0]">
+            
+            <img src={{comic.images[0].path}}.{{comic.images[0].extension}} width="220px" height="350px" />
+        </div>
+        <div *ngIf="!comic.images[0]">
+            
+            <img src="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg" width="220px" height="350px" />
+        </div>
+        <p>{{comic.title}}</p>
+    
+        </a>
+    </div>
+    </li>
+    </div>
+</div>

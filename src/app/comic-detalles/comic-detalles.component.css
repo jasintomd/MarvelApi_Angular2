@@ -1,0 +1,81 @@
+#contenido {
+    margin-left:3%;
+
+}
+h1{
+    color:white;
+    font-size: 4em;
+    margin-left: 15%;
+    
+}
+#resumenSerie{
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 3%;
+    
+}
+
+.imgComic{
+    height: 40em;
+    border: solid 1px white;
+    float:left;
+    margin-right: 3%;
+    
+}
+
+h2, .descr, h3{
+    color:white;
+    margin-bottom: 3%;
+}
+
+li{
+    width: 20%;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    font-size:2em;
+}
+li a{
+    color:bisque;
+    text-decoration: none;
+}
+li:hover{
+    padding: 0px 0px 20px 0px;  
+}
+li:hover img{
+    height: 370px;
+    width: 260px;
+    box-shadow: 0px 2px 56px 0px rgba(0,0,0,0.75);
+}
+.personajes:hover{
+    padding: 20px;
+    box-shadow: 0px;
+}
+.personajes a:hover{
+    padding-top:-20px; 
+    font-size: 1.5em;
+}
+.personajes{
+    width: 17%;
+    
+}
+.temaClaro a, .temaClaro p, .temaClaro h1, .temaClaro h2, .temaClaro h3{
+    color: black;
+}
+
+.temaClaro img{
+    border: solid 1px black;
+    
+}
+#desc{
+    width: 80%;
+}
+.personajes{ 
+    height: 7em;
+    width: 30%;
+}
+.noEncontrada{
+    width: 40em;
+}

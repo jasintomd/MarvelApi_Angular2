@@ -1,0 +1,24 @@
+
+<div id="contenido" *ngIf="!listaComics">
+    <app-loading></app-loading>
+    
+</div>
+
+    
+<div id="contenido" *ngIf="listaComics">
+<li *ngFor="let comic of listaComics.data.results | filtroNombre: servicioTema.filtro ">
+    <div [ngClass]="{'temaOscuro': servicioTema.tema[0], 'temaClaro': servicioTema.tema[1]}"><a routerLink={{comic.id}}>
+        <div *ngIf="comic.images[0]">
+            
+            <img src={{comic.images[0].path}}.{{comic.images[0].extension}} width="220px" height="350px" />
+        </div>
+        <div *ngIf="!comic.images[0]">
+            
+            <img class="noEncontrada" src="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg" width="220px" height="350px"/>
+        </div>
+        <p>{{comic.title}}</p>
+    
+        </a>
+    </div>
+    </li>
+</div>
